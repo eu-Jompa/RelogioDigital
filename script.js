@@ -13,8 +13,11 @@ const interval = setInterval(function time(){
     minuto = date.getMinutes();
     segundo = date.getSeconds();
 
-    windowHoras.textContent = hora;
-    windowMinutos.textContent = minuto;
-    windowSegundos.textContent = segundo;
-})
 
+    windowHoras.textContent = formartTime(hora);
+    windowMinutos.textContent = formartTime(minuto);
+    windowSegundos.textContent = formartTime(segundo);
+})
+function formartTime(timer){
+    return timer<10 ? `0${timer}` : timer;
+}
